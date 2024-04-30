@@ -22,6 +22,9 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            position: relative;
+            width: 90%; /* コンテナの幅を相対値で指定 */
+            max-width: 400px; /* コンテナの最大幅を指定 */
         }
 
         h1 {
@@ -35,19 +38,24 @@
             margin-top: 20px;
         }
 
-        @media only screen and (max-width: 600px) {
-            .quiz-container {
-                width: 90%;
-            }
+        #conan-image {
+            position: absolute;
+            top: 100px;
+            right: 0;
+            width: 20%; /* コナンの画像サイズを相対値で指定 */
+            height: auto;
+            z-index: 10;
         }
+
     </style>
 </head>
 <body>
 <div class="quiz-container">
-    <div>
+    <div style="position: relative;">
         <img src="https://raw.githubusercontent.com/Yuki-Hata/Yuki-Hata.github.io/main/Q.png" style="max-width: 100%;">
+        <img id="conan-image" src="https://raw.githubusercontent.com/Yuki-Hata/Yuki-Hata.github.io/main/conan.png">
     </div>
-    <form id="quiz-form">
+    <form id="quiz-form" style="margin-top: 30px;">
         <label for="answer">回答：</label>
         <input type="text" id="answer" name="answer" required>
         <button type="submit">Submit</button>
