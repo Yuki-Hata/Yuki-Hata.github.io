@@ -35,8 +35,9 @@
 </head>
 <body>
 <div class="quiz-container">
-    <h1>問題：</h1>
-    <p>2 + 2 = ?</p>
+    <div>
+        <img src="https://raw.githubusercontent.com/Yuki-Hata/Yuki-Hata.github.io/main/Q.png">
+    </div>
     <form id="quiz-form">
         <label for="answer">回答：</label>
         <input type="text" id="answer" name="answer" required>
@@ -54,7 +55,7 @@
         var answerContainer = document.getElementById('answer-container');
         var answerImage = document.getElementById('answer-image');
 
-        if (answerInput.trim() === '4') {
+        if (answerInput.trim() === decodeURIComponent(atob('JUUzJTgzJUFDJUUzJTgzJTg2JUUzJTgyJUEzJUUzJTgyJUI5'))) {
             answerImage.src = 'https://pbs.twimg.com/media/DuispMzVYAI_BUk?format=jpg&name=medium';
         } else {
             answerImage.src = 'https://e-village.main.jp/gazou/image_gazou/shun_0015.jpg';
