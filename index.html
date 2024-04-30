@@ -21,22 +21,31 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
+            margin-top: 0;
         }
 
         #answer-image {
             max-width: 100%;
             height: auto;
+            display: none;
+            margin-top: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .quiz-container {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
 <div class="quiz-container">
     <div>
-        <img src="https://raw.githubusercontent.com/Yuki-Hata/Yuki-Hata.github.io/main/Q.png">
+        <img src="https://raw.githubusercontent.com/Yuki-Hata/Yuki-Hata.github.io/main/Q.png" style="max-width: 100%;">
     </div>
     <form id="quiz-form">
         <label for="answer">回答：</label>
@@ -44,7 +53,7 @@
         <button type="submit">Submit</button>
     </form>
     <div id="answer-container">
-        <img src="" alt="Answer" id="answer-image" style="display: none;">
+        <img src="" alt="Answer" id="answer-image">
     </div>
 </div>
 
