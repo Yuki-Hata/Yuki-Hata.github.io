@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #answer-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="quiz-container">
+    <h1>問題：</h1>
+    <p>2 + 2 = ?</p>
+    <form id="quiz-form">
+        <label for="answer">回答：</label>
+        <input type="text" id="answer" name="answer" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="answer-container">
+        <img src="" alt="Answer" id="answer-image" style="display: none;">
+    </div>
+</div>
+
+<script>
+    document.getElementById('quiz-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var answerInput = document.getElementById('answer').value;
+        var answerContainer = document.getElementById('answer-container');
+        var answerImage = document.getElementById('answer-image');
+
+        if (answerInput.trim() === '4') {
+            answerImage.src = 'https://pbs.twimg.com/media/DuispMzVYAI_BUk?format=jpg&name=medium';
+        } else {
+            answerImage.src = 'https://e-village.main.jp/gazou/image_gazou/shun_0015.jpg';
+            setTimeout(function () {
+                location.reload();
+            }, 3000);
+        }
+
+        answerImage.style.display = 'block';
+    });
+</script>
+</body>
+</html>
