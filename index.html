@@ -2,13 +2,16 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>鳩でもわかる鳩クエスト</title>
+    <title>RPG</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='./style.css' type='text/css' media='all'/>
 </head>
 
 <body>
+<div>
+    <p style="font-size: 30px;">PCのみ対応</p>
+</div>
 <div id="main">
     <canvas id="canvas"></canvas>
     <button id="fight" onclick="NormalAttack()">通常攻撃</button>
@@ -25,10 +28,5 @@
 </div>
 
 <script src='./app.js'></script>
-<script>
-    document.addEventListener('contextmenu', function (event) {
-        event.preventDefault();  // コンテキストメニューの表示を防止
-    }, false);
-</script>
 </body>
 </html>
