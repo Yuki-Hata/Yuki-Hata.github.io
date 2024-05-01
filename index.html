@@ -1,88 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <title>鳩でもわかる鳩クエスト</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-        }
-
-        .quiz-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: relative;
-            width: 90%; /* コンテナの幅を相対値で指定 */
-            max-width: 400px; /* コンテナの最大幅を指定 */
-        }
-
-        h1 {
-            margin-top: 0;
-        }
-
-        #answer-image {
-            max-width: 100%;
-            height: auto;
-            display: none;
-            margin-top: 20px;
-        }
-
-        #conan-image {
-            position: absolute;
-            top: 100px;
-            right: 0;
-            width: 20%; /* コナンの画像サイズを相対値で指定 */
-            height: auto;
-            z-index: 10;
-        }
-
-    </style>
+    <link rel='stylesheet' href='./style.css' type='text/css' media='all'/>
 </head>
+
 <body>
-<div class="quiz-container">
-    <div style="position: relative;">
-        <img src="https://raw.githubusercontent.com/Yuki-Hata/Yuki-Hata.github.io/main/Q.png" style="max-width: 100%;">
-        <img id="conan-image" src="https://raw.githubusercontent.com/Yuki-Hata/Yuki-Hata.github.io/main/conan.png">
-    </div>
-    <form id="quiz-form" style="margin-top: 30px;">
-        <label for="answer">回答：</label>
-        <input type="text" id="answer" name="answer" required>
-        <button type="submit">Submit</button>
-    </form>
-    <div id="answer-container">
-        <img src="" alt="Answer" id="answer-image">
-    </div>
+<div id="main">
+    <canvas id="canvas"></canvas>
+    <button id="fight" onclick="NormalAttack()">通常攻撃</button>
+    <button id="magic1" onclick="Magic1()">攻撃魔法</button>
+    <button id="magic2" onclick="Magic2()">回復魔法</button>
+
+    <button id="up">上</button>
+    <button id="down">下</button>
+    <button id="left">左</button>
+    <button id="right">右</button>
+
+    <button id="start" onclick="Start()">プレイする</button>
+    <button id="retry" onclick="Retry()">もう一度プレイする</button>
 </div>
 
-<script>
-    document.getElementById('quiz-form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        var answerInput = document.getElementById('answer').value;
-        var answerContainer = document.getElementById('answer-container');
-        var answerImage = document.getElementById('answer-image');
-
-        if (answerInput.trim() === decodeURIComponent(atob('JUUzJTgzJUFDJUUzJTgzJTg2JUUzJTgyJUEzJUUzJTgyJUI5'))) {
-            answerImage.src = 'https://pbs.twimg.com/media/DuispMzVYAI_BUk?format=jpg&name=medium';
-        } else {
-            answerImage.src = 'https://e-village.main.jp/gazou/image_gazou/shun_0015.jpg';
-            setTimeout(function () {
-                location.reload();
-            }, 3000);
-        }
-
-        answerImage.style.display = 'block';
-    });
-</script>
+<script src='./app.js'></script>
 </body>
 </html>
