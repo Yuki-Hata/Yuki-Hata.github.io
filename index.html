@@ -25,5 +25,10 @@
 </div>
 
 <script src='./app.js'></script>
+<script>
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();  // コンテキストメニューの表示を防止
+    }, false);
+</script>
 </body>
 </html>

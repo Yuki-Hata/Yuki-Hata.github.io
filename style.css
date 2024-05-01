@@ -73,3 +73,7 @@
     width: 160px;
     height: 50px;
 }
+button {
+    user-select: none;  /* テキスト選択を無効にする */
+    touch-action: manipulation; /* ダブルタップズームなどのジェスチャを無効にする */
+}
